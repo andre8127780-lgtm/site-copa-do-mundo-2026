@@ -55,12 +55,25 @@
       padding:20px;
       border-radius:20px;
       border:3px solid #FFDF00;
+      max-height:750px;
+      overflow-y:auto;
     }
 
     .jogadores h2{
       text-align:center;
       margin-bottom:20px;
       color:#FFDF00;
+    }
+
+    .categoria{
+      margin-top:20px;
+    }
+
+    .categoria h3{
+      margin-bottom:10px;
+      color:#FFDF00;
+      border-bottom:2px solid #FFDF00;
+      padding-bottom:5px;
     }
 
     .lista{
@@ -103,8 +116,8 @@
     }
 
     .posicao{
-      width:120px;
-      height:50px;
+      width:140px;
+      height:60px;
       background:rgba(255,255,255,0.2);
       border:2px dashed white;
       border-radius:15px;
@@ -114,6 +127,7 @@
       text-align:center;
       font-weight:bold;
       color:white;
+      padding:5px;
     }
 
     .titulo-formacao{
@@ -180,28 +194,138 @@
 
         <h2>📋 Convocados</h2>
 
-        <div class="lista">
+        <!-- GOLEIROS -->
+        <div class="categoria">
+          <h3>🧤 Goleiros</h3>
 
-          <div class="jogador" draggable="true">Alisson</div>
-          <div class="jogador" draggable="true">Ederson</div>
+          <div class="lista">
+            <div class="jogador" draggable="true">
+              Alisson (Liverpool)
+            </div>
 
-          <div class="jogador" draggable="true">Marquinhos</div>
-          <div class="jogador" draggable="true">Gabriel Magalhães</div>
-          <div class="jogador" draggable="true">Alex sandro</div>
-          <div class="jogador" draggable="true">Danilo</div>
-          <div class="jogador" draggable="true">Wesley</div>
+            <div class="jogador" draggable="true">
+              Ederson (Fenerbahçe)
+            </div>
 
-          <div class="jogador" draggable="true">Bruno Guimarães</div>
-          <div class="jogador" draggable="true">Casemiro</div>
-          <div class="jogador" draggable="true">Lucas Paquetá</div>
-          <div class="jogador" draggable="true">Neymar jr</div>
+            <div class="jogador" draggable="true">
+              Weverton (Grêmio)
+            </div>
+          </div>
+        </div>
 
-          <div class="jogador" draggable="true">Rayan</div>
-          <div class="jogador" draggable="true">Vinícius Jr</div>
-          <div class="jogador" draggable="true">Endrick</div>
-          <div class="jogador" draggable="true">Raphinha</div>
-          <div class="jogador" draggable="true">Martinelli</div>
+        <!-- DEFENSORES -->
+        <div class="categoria">
+          <h3>🛡️ Defensores</h3>
 
+          <div class="lista">
+
+            <div class="jogador" draggable="true">
+              Alex Sandro (Flamengo)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Bremer (Juventus)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Danilo (Flamengo)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Douglas Santos (Zenit)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Gabriel Magalhães (Arsenal)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Ibañez (Al-Ahli)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Léo Pereira (Flamengo)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Wesley (Roma)
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MEIO -->
+        <div class="categoria">
+          <h3>🎯 Meio-campistas</h3>
+
+          <div class="lista">
+
+            <div class="jogador" draggable="true">
+              Bruno Guimarães (Newcastle)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Casemiro (Manchester United)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Danilo (Botafogo)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Fabinho (Al-Ittihad)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Lucas Paquetá (Flamengo)
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ATAQUE -->
+        <div class="categoria">
+          <h3>⚡ Atacantes</h3>
+
+          <div class="lista">
+
+            <div class="jogador" draggable="true">
+              Endrick (Lyon/Real Madrid)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Gabriel Martinelli (Arsenal)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Igor Thiago (Brentford)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Luiz Henrique (Zenit)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Matheus Cunha (Manchester United)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Neymar (Santos)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Raphinha (Barcelona)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Rayan (Bournemouth)
+            </div>
+
+            <div class="jogador" draggable="true">
+              Vinícius Júnior (Real Madrid)
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -320,15 +444,15 @@
 
       const posicoes = document.querySelectorAll('.posicao');
 
-      let escalação = "🇧🇷 SUA ESCALAÇÃO:\n\n";
+      let escalacao = "🇧🇷 SUA ESCALAÇÃO:\n\n";
 
       posicoes.forEach((p,index)=>{
 
-        escalação += (index + 1) + ". " + p.innerText + "\n";
+        escalacao += (index + 1) + ". " + p.innerText + "\n";
 
       });
 
-      alert(escalação);
+      alert(escalacao);
 
     }
 
